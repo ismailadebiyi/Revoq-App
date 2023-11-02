@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+
+spring:
+  application:
+    name: users
+  datasource:
+    password: 'adebayo2516'
+    url: jdbc:postgresql://localhost:5342/revoq
+    username: 'ismailadebiyi'
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+
+  main:
+    web-application-type: servlet
