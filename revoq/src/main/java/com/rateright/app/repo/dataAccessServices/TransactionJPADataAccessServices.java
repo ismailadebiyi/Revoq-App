@@ -1,5 +1,6 @@
 package com.rateright.app.repo.dataAccessServices;
 
+import com.rateright.app.model.Customers;
 import com.rateright.app.model.Transactions;
 import com.rateright.app.repo.TransactionRepo;
 import com.rateright.app.repo.dao.TransactionDao;
@@ -30,7 +31,7 @@ public class TransactionJPADataAccessServices implements TransactionDao {
 
     @Override
     public List<Transactions> listAllTransactionByCustomerId(Long customerId) {
-        return transactionRepo.findAllTransactionsByCustomerId(customerId);
+        return transactionRepo.findAllTransactionsByCustomers_CustomerId(customerId);
     }
 
     @Override
@@ -38,8 +39,8 @@ public class TransactionJPADataAccessServices implements TransactionDao {
         return transactionRepo.findById(txId);
     }
 
-    @Override
-    public List<Transactions> listAllTransactionByDate(Date date) {
-        return transactionRepo.findAllTransactionsByTxTime(date);
-    }
+//    @Override
+//    public List<Transactions> listAllTransactionByDate(Date date) {
+//        return transactionRepo.findAllTransactionsByTxTime(date);
+//    }
 }

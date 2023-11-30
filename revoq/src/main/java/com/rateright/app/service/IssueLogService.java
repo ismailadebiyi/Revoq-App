@@ -23,10 +23,8 @@ public class IssueLogService {
 
     public void raiseIssueTicket(RaiseIssueTicketRequest issueTicketRequest){
         IssueLog issueLog = IssueLog.builder()
-                .customerId(issueTicketRequest.customerId())
                 .issueDescription(issueTicketRequest.issueDescription())
                 .status(Status.PENDING)
-                .ticketTime(now())
                 .build();
         issueDao.raiseIssueTicket(issueLog);
     }
@@ -36,9 +34,9 @@ public class IssueLogService {
     public List<IssueLog> showAllIssuesRaisedByTime(Date issueTime){
         return issueDao.viewAllIssuesByTime(issueTime);
     }
-    public List<IssueLog> viewAllIssuesByCustomerId(Long customerId){
+    /*public List<IssueLog> viewAllIssuesByCustomerId(Long customerId){
         return  issueDao.viewAllIssuesByCustomerId(customerId);
-    }
+    }*/
     public IssueLog viewissueById(Long ticketId){
         return issueDao.viewissueById(ticketId)
                 .orElseThrow(()-> new ResourceNotFoundException("Issue Ticket Not Found"));

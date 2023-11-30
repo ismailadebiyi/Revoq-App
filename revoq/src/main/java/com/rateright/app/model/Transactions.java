@@ -6,7 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity(name = "Transactions")
@@ -42,4 +43,9 @@ public class Transactions {
             )
     )
     private Customers customers;
+    @OneToMany(
+            mappedBy = "transactions",
+            cascade = CascadeType.ALL
+    )
+    private List<Reviews> reviews = new ArrayList<>();
 }

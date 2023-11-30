@@ -48,10 +48,10 @@ public class IssuesJPADataAccessServices implements IssueDao {
      * @param customerId
      * @return
      */
-    @Override
+  /*  @Override
     public List<IssueLog> viewAllIssuesByCustomerId(Long customerId) {
         return issueRepo.findAllIssueLogByCustomerId(customerId);
-    }
+    }*/
 
     /**
      * @param ticketId

@@ -11,5 +11,5 @@ public interface IssueRepo extends JpaRepository<IssueLog, Long> {
 
     List<IssueLog> findAllIssueLogByTicketTime(Date issueTime);
     List<IssueLog> findAllIssueLogByStatus(Status status);
-    List<IssueLog> findAllIssueLogByCustomerId(Long customerId);
+    /*List<IssueLog> findAllIssueLogByCustomerId(Long customerId);*/
 }

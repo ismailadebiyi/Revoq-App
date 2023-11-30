@@ -22,7 +22,6 @@ public class ResolutionService {
         Resolutions resolutions = Resolutions.builder()
                 .ticketId(request.ticketId())
                 .resolutionComments(request.resolutionComment())
-                .updateTime(now())
                 .build();
         resolutionDao.postResolutionComment(resolutions);
     }

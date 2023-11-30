@@ -15,5 +15,5 @@ public interface ReviewRepo extends JpaRepository<Reviews, Long> {
     @Query("SELECT r FROM Reviews r WHERE r.ratings = ?1")
     List<Reviews> findAllByRatings(Integer ratings);
 
-    List<Reviews> findAllByCustomerId(Long CustomerId);
+   /* List<Reviews> findAllByCustomerId(Long CustomerId);*/
 }

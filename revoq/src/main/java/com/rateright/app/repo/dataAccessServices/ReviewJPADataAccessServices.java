@@ -31,8 +31,8 @@ public class ReviewJPADataAccessServices implements ReviewDao {
         return reviewRepo.findAllByRatings(ratings);
     }
 
-    @Override
+   /* @Override
     public List<Reviews> listAllReviewsByCustomerId(Long customerId) {
         return reviewRepo.findAllByCustomerId(customerId);
-    }
+    }*/
 }

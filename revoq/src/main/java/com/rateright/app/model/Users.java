@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Data
 @Builder
@@ -39,6 +42,12 @@ public class Users {
     private String address;
     private String contactPersonName;
     private Integer phoneNo;
+
+    @OneToMany(
+            mappedBy = "users",
+            cascade = CascadeType.ALL
+    )
+    private List<Customers> customersList = new ArrayList<>();
 
 
 }

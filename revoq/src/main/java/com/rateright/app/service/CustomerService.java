@@ -2,6 +2,7 @@ package com.rateright.app.service;
 
 import com.rateright.app.exceptions.ResourceNotFoundException;
 import com.rateright.app.model.Customers;
+import com.rateright.app.model.Transactions;
 import com.rateright.app.repo.dao.CustomerDao;
 import com.rateright.app.requests.CustomerRegistrationRequest;
 import org.springframework.stereotype.Service;
@@ -26,7 +27,6 @@ public class CustomerService {
                 .email(request.email())
                 .phoneNumber(request.phoneNumber())
                 .avatar(request.avatar())
-                .userId(request.userId())
                 .build();
 
         customerDao.addCustomer(customer);
@@ -45,6 +45,5 @@ public class CustomerService {
     public void deleteCustomerById(Long customerId){
         customerDao.deleteCustomerById(customerId);
     }
-
 
 }

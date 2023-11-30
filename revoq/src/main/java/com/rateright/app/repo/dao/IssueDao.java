@@ -12,7 +12,7 @@ public interface IssueDao {
     void raiseIssueTicket(IssueLog issueLog);
     List<IssueLog> viewAllIssues();
     List<IssueLog> viewAllIssuesByTime(Date issueTime);
-    List<IssueLog> viewAllIssuesByCustomerId(Long customerId);
+    /*List<IssueLog> viewAllIssuesByCustomerId(Long customerId);*/
     Optional<IssueLog> viewissueById(Long ticketId);
     List<IssueLog> viewAllIssuesByStatus(Status status);
 }

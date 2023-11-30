@@ -19,7 +19,6 @@ public class ReviewService {
 
     public void postReview(ReviewPostRequest reviewPostRequest){
         Reviews reviews = Reviews.builder()
-                .customerId(reviewPostRequest.customerId())
                 .ratings(reviewPostRequest.ratings())
                 .comment(reviewPostRequest.comment())
                 .build();
@@ -34,7 +33,7 @@ public class ReviewService {
         return reviewDao.listAllReviewsByRatings(ratings);
     }
 
-    public List<Reviews> showAllReviewsByCustmerId(Long customerId){
+   /* public List<Reviews> showAllReviewsByCustmerId(Long customerId){
         return reviewDao.listAllReviewsByCustomerId(customerId);
-    }
+    }*/
 }

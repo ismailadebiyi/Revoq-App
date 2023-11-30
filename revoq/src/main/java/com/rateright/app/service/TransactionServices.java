@@ -23,10 +23,8 @@ public class TransactionServices {
     //TODO: SendReviewLinkToCustomerEmailAndPhoneNo
     public void createTransaction(CreateTransactionRequest transactionRequest){
         Transactions transactions = Transactions.builder()
-                .customerId(transactionRequest.customerId())
                 .txDetails(transactionRequest.transactionDetails())
                 .reviewLink(getTransactionUri())
-                .txTime(now())
                 .build();
         transactionDao.addTransaction(transactions);
     }
@@ -34,9 +32,9 @@ public class TransactionServices {
         return transactionDao.listAllTransactions();
     }
 
-    public List<Transactions> viewAllTransactionByDate(Date date){
+  /*  public List<Transactions> viewAllTransactionByDate(Date date){
         return transactionDao.listAllTransactionByDate(date);
-    }
+    }*/
 
     public Transactions viewTransactionById(Long txId){
         return transactionDao.findTransactionById(txId)
@@ -50,4 +48,5 @@ public class TransactionServices {
     public String getTransactionUri(){
         return "https://transactionlink.com/review?";
     }
+
 }

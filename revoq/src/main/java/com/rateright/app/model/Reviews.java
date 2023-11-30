@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity(name = "Reviews")
 @Data
 @Builder
@@ -28,6 +30,20 @@ public class Reviews {
     private Long reviewId;
     private Integer ratings;
     private String comment;
-    private Long customerId;
+    @ManyToOne
+    @JoinColumn(
+            name = "transaction_id",
+            nullable = false,
+            referencedColumnName = "txId",
+            foreignKey = @ForeignKey(
+                    name = "service_reviews_fk"
+            )
+    )
+    private Transactions transactions;
+    @OneToMany(
+            mappedBy = "reviews" ,
+            cascade = CascadeType.ALL
+    )
+    private List<IssueLog> logList;
 
 }

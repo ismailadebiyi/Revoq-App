@@ -8,6 +8,6 @@ public interface ReviewDao {
     void addReview (Reviews reviews);
     List<Reviews> listAllReviews();
     List<Reviews> listAllReviewsByRatings(Integer ratings);
-    List<Reviews> listAllReviewsByCustomerId(Long customerId);
+    /*List<Reviews> listAllReviewsByCustomerId(Long customerId);*/
 
 }

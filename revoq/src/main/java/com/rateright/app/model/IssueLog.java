@@ -31,6 +31,16 @@ public class IssueLog {
     private Long ticketId;
     private String issueDescription;
     private Status status;
-    private Long customerId;
     private LocalDateTime ticketTime;
+    @ManyToOne
+    @JoinColumn(
+            name = "review_id",
+            nullable = false,
+            referencedColumnName = "reviewId",
+            foreignKey = @ForeignKey(
+                    name = "review_issue_fk"
+            )
+    )
+    private Reviews reviews;
+
 }
